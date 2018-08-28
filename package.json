@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my_module.js",
+  "scripts": {
+    "test": "node test1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deasync-promise": "^1.0.1"
+  }
+}
