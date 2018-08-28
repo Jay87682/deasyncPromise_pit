@@ -11,6 +11,7 @@ It just return without throwing error
 
 This is how deasyncPromise implement:
 
+```
 module.exports = function(promise) {
 	var result, error, done = false;
 	promise.then(function(res) {
@@ -29,3 +30,4 @@ module.exports = function(promise) {
     }
     return result;
 }
+```
