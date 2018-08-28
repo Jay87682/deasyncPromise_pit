@@ -7,3 +7,25 @@ Expect result:
 deasyncPromise should throw error
 Result:
 It just return without throwing error
+
+
+This is how deasyncPromise implement:
+
+module.exports = function(promise) {
+	var result, error, done = false;
+	promise.then(function(res) {
+		result = res;
+	}, function(err) {
+		error = err;
+	}).then(function() {
+		done = true;
+	});
+    while(!done) {
+        loop();
+    }
+    if (error) {
+      //If error is undefined, it will pass this throw
+    	throw error;
+    }
+    return result;
+}
